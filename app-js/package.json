@@ -1,7 +1,12 @@
 {
-  "name": "app-js",
+  "name": "security-node",
   "version": "1.0.0",
+  "private": true,
   "dependencies": {
-    "lodash": "4.17.11"   // 既知の脆弱性あり
+    "lodash": "4.17.19",      // CVE-2020-8203（Prototype Pollution）
+    "minimist": "0.0.8"       // 古い既知の脆弱版
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
