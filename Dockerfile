@@ -1,2 +1,7 @@
-FROM ubuntu:14.04   # EOLで多数の脆弱性あり
-RUN apt-get update && apt-get install -y curl
+# EOL/古い系の公式イメージ（脆弱性が多く出やすい）
+FROM node:14
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm install
+COPY . .
+CMD ["node", "index.js"]
